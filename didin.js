@@ -31,12 +31,12 @@ const primbon = new Primbon()
 const maker = require('mumaker')
 const textpro = require('./lib/textpro')
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom, getGroupAdmins } = require('./lib/myfunc')
-const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
-const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
-const timur = moment.tz('Asia/Jayapura').format('HH:mm:ss')
+const hariini = moment.tz('America/Port-au-Prince').format('dddd, DD MMMM YYYY')
+const barat = moment.tz('America/Port-au-Prince').format('HH:mm:ss')
+const tengah = moment.tz('America/Port-au-Prince').format('HH:mm:ss')
+const timur = moment.tz('America/Port-au-Prince').format('HH:mm:ss')
 const nyoutube = ('©Andy XD‡')  //ubah di config biar ngk emro
-const didinyt = ('*ɴᴏᴛᴇ  :*\n*• ʙᴏᴛ ᴍᴀsɪʜ ᴅᴀʟᴀᴍ ᴛᴀʜᴀᴘ ᴘᴇʀᴋᴇᴍʙᴀɴɢᴀɴ ᴊɪᴋᴀ ᴀᴅᴀ ʙᴜɢ sɪʟᴀʜᴋɴ ʟᴀᴘᴏʀ ᴋᴇ ᴏᴡɴᴇʀ.*')  //ubah di config biar ngk emror
+const didinyt = ('*ɴᴏᴛᴇ  :*\n*• ʙᴏ ᴍᴀsɪʜ ᴅᴀʟᴀᴍ ᴛᴀʜᴀᴘ ᴘᴇʀᴋᴇᴍʙᴀɴɢᴀɴ ᴊɪᴋᴀ ᴀᴅᴀ ʙᴜɢ sɪʟᴀʜᴋɴ ʟᴀᴘᴏʀ ᴋᴇ ᴏᴡɴᴇʀ.*')  //ubah di config biar ngk emror
 const ini_mark = `0@s.whatsapp.net`
 
 // database virtex
@@ -45,24 +45,24 @@ const { virus } = require('./lib/virtex/virus')
 const { ngazap } = require('./lib/virtex/ngazap')
 
 //TIME
-const time2 = moment().tz('Asia/Jakarta').format('HH:mm:ss')  
+const time2 = moment().tz('America/Port-au-Prince').format('HH:mm:ss')  
  if(time2 < "23:59:00"){
-var ucapanWaktu = 'Selamat Malam 🌌'
+var ucapanWaktu = 'Good night 🌌'
  }
  if(time2 < "19:00:00"){
-var ucapanWaktu = 'Selamat Sore 🌃'
+var ucapanWaktu = 'Good afternoon 🌃'
  }
  if(time2 < "18:00:00"){
-var ucapanWaktu = 'Selamat Sore 🌅'
+var ucapanWaktu = 'Good afternoon 🌅'
  }
  if(time2 < "15:00:00"){
-var ucapanWaktu = 'Selamat Siang 🏙'
+var ucapanWaktu = 'Good afternoon 🏙'
  }
  if(time2 < "11:00:00"){
-var ucapanWaktu = 'Selamat Pagi 🌄'
+var ucapanWaktu = 'Good morning 🌄'
  }
  if(time2 < "05:00:00"){
-var ucapanWaktu = 'Selamat Pagi 🌉'
+var ucapanWaktu = 'Good morning 🌉'
  } 
  
  //Database\\
@@ -160,12 +160,12 @@ const hsjdh = randomNomor(5)
 			}
 
 /////TEKS BUTTON
-const prem1 = `Hai kak  ${pushname} ${ucapanWaktu} \n\nFitur Ini Khusus Member Premium Silahkan Buy Premium Untuk Menggunakan Fitur Ini `
-const prem2 = `Klik tombol di bawah ini untuk membeli premium \n © 𝕯𝖆𝖋𝖋𝖆𝖆𝖆 𝖃𝕯`
+const prem1 = `Yooo bro ${pushname} ${speech} \n\nThis feature is only for premium members, please buy premium to use this feature `
+const prem2 = `Click the button below to buy premium \n © ANDYMRLIT`
 const prem3 = [{buttonId: `${prefix}beliprem`,buttonText: {displayText: `BELI PREMIUM`,},type: 1,},]
 
-blomdaftar = `${ucapanWaktu} @${sender.split("@")[0]} Kamu belum terdaftar di database cek private message mu untuk mendaftar`
-limitabis = `*[LIMIT KAMU HABIS]*\nBeli limit di ${prefix}buylimit atau beli premium untuk mendapatkan unlimited limit`
+blomdaftar = `${ucapanWaktu} @${sender.split("@")[0]} You are not registered in the database, check your private messages to register`
+limitabis = `*[LIMIT KAMU HABIS]*\n Buy limit at ${prefix}buylimit or buy premium to get unlimited limit`
 //SAMA"
 const drip =  {
   key : {
@@ -237,14 +237,14 @@ let buttonMessage = {
 	  // Anti Link
 if (db.data.chats[m.chat].antilink) {
 if (budy.match(`chat.whatsapp.com`)) {
-m.reply(`「 *ANTI LINK* 」\n\n*Kamu terdeteksi mengirim link group*, *maaf kamu akan di kick‼️,yang mau juga silahkan kirim link‼️*`)
-if (!isBotAdmins) return m.reply(`*Bot aja bukan admin anj*`)
+m.reply(`「 *ANTI LINK* 」\n\n*You were detected sending a group link*, *sorry you will be kicked‼️, Those who want it too, please send the link‼️*`)
+if (!isBotAdmins) return m.reply(`*Just a bot, not an admin*`)
 let gclink = (`https://chat.whatsapp.com/`+await didin.groupInviteCode(m.chat))
 let isLinkThisGc = new RegExp(gclink, 'i')
 let isgclink = isLinkThisGc.test(m.text)
-if (isgclink) return m.reply(`*maaf gak jadi, karena kamu ngirim link group ini*`)
-if (isAdmins) return m.reply(`*maaf kamu admin*`)
-if (isCreator) return m.reply(`*maaf kamu owner bot ku*`)
+if (isgclink) return m.reply(`*sorry it didn't work, because you sent this group link*`)
+if (isAdmins) return m.reply(`*sorry you admin*`)
+if (isCreator) return m.reply(`*sorry you are the owner of my bot*`)
 didin.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
 }
 }
@@ -377,10 +377,10 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    }
 	    if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
 	    m.reply({
-	    '-3': 'Game telah berakhir',
+	    '-3': 'Game over',
 	    '-2': 'Invalid',
-	    '-1': 'Posisi Invalid',
-	    0: 'Posisi Invalid',
+	    '-1': 'Invalid Position',
+	    0: 'Invalid Position',
 	    }[ok])
 	    return !0
 	    }
@@ -412,7 +412,7 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-${isWin ? `@${winner.split('@')[0]} Menang!` : isTie ? `Game berakhir` : `Giliran ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
+${isWin ? `@${winner.split('@')[0]} Win!` : isTie ? `Game end` : `turn ${['❌', '⭕'][1 * room.game._currentTurn]} (@${room.game.currentTurn.split('@')[0]})`}
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
@@ -434,7 +434,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
 	    let tie = false
 	    if (m.sender == roof.p2 && /^(acc(ept)?|terima|gas|oke?|tolak|gamau|nanti|ga(k.)?bisa|y)/i.test(m.text) && m.isGroup && roof.status == 'wait') {
 	    if (/^(tolak|gamau|nanti|n|ga(k.)?bisa)/i.test(m.text)) {
-	    didin.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} menolak suit, suit dibatalkan`, m)
+	    didin.sendTextWithMentions(m.chat, `@${roof.p2.split`@`[0]} refuse suit, suit cancelled`, m)
 	    delete this.suit[roof.id]
 	    return !0
 	    }
@@ -442,14 +442,14 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
-	    didin.sendText(m.chat, `Suit telah dikirimkan ke chat
+	    didin.sendText(m.chat, `The suit has been sent to the chat
 
 @${roof.p.split`@`[0]} dan 
 @${roof.p2.split`@`[0]}
 
 Silahkan pilih suit di chat masing"
 klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] })
-	    if (!roof.pilih) didin.sendText(roof.p, `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️`, m)
+	    if (!roof.pilih) didin.sendText(roof.p, `select  \n\nBatu🗿\nKertas📄\nGunting✂️`, m)
 	    if (!roof.pilih2) didin.sendText(roof.p2, `Silahkan pilih \n\nBatu🗿\nKertas📄\nGunting✂️`, m)
 	    roof.waktu_milih = setTimeout(() => {
 	    if (!roof.pilih && !roof.pilih2) didin.sendText(m.chat, `Kedua pemain tidak niat main,\nSuit dibatalkan`)
@@ -619,22 +619,22 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             break
             case 'bot': {
-                m.reply('Ada apa bro kok manggil saya ada yg bisa saya bantu 🤔')
+                m.reply('Whats wrong, bro, why did you call me, is there anything I can help you with?🤔')
             }
             break
-            case 'asalamualaikum': {
-                m.reply('Waalaikumsalam')
+            case 'Hello': {
+                m.reply('How are you bro')
             }
             case 'hehe': {
                 m.reply('Fitur Yang Eror Akan Segera Mimin Benerin\nSabar Ya:/')
             }
             break
             case 'groupbot': {
-                m.reply('Halo Kak\nGroup DidinBotz: https://chat.whatsapp.com/CigmOAZApWZDWnAKAHQ5Ju\nNOTE : Kalo kakak nya Punya Bot Masukin aja\n\n*_Makasih><_*')
+                m.reply('Bro\nGroup AndyXd: https://chat.whatsapp.com/DSjOomRaTkU4z1a5ngl2Yw\nNOTE : If his brother has a bot, just enter it\n\n*_Thanks><_*')
             }
             break
             case 'tqto': {
-                m.reply('THANK TO :\nDikaArdnt: https://github.com/DikaArdnt\nDaffa : https://github.com/Daffa-botzz\ndidin: https://github.com/didindev\nRonove: https://github.com/ralfh19\nRifza: https://github.com/rifza123')
+                m.reply('THANK TO :\nMaxy: https://github.com/MaxyHacker')
             }
             break
             case 'chat': {
@@ -1171,18 +1171,18 @@ break
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return m.reply(mess.admin)
-if (args.length < 1) return m.reply('ketik on untuk mengaktifkan\nketik off untuk menonaktifkan')
+if (args.length < 1) return m.reply('type on to activate\ntype off to deactivate')
 if (args[0] === "on") {
 if (AntiDelete) return m.reply('Sudah Aktif')
 ntidel.push(from)
-m.reply('Succes menyalakan antidelete di group ini')
+m.reply('Success turned on antidelete in this group')
 } else if (args[0] === "off") {
-if (!AntiDelete) return m.reply('Sudah Mati')
+if (!AntiDelete) return m.reply('Is dead')
 let off = ntidel.indexOf(from)
 ntidel.splice(off, 1)
-m.reply('Succes mematikan antidelete di group ini')
+m.reply('Success turned off antidelete in this group')
 } else {
-m.reply('on untuk mengaktifkan, off untuk menonaktifkan')
+m.reply('on to enable, off to disable')
 }
 }
 break
@@ -1191,13 +1191,13 @@ if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 if (args[0] === "on") {
-if (db.data.chats[m.chat].antilink) return m.reply(`Sudah Aktif Sebelumnya`)
+if (db.data.chats[m.chat].antilink) return m.reply(`Previously Active`)
 db.data.chats[m.chat].antilink = true
 m.reply(`Antilink Aktif !`)
 } else if (args[0] === "off") {
-if (!db.data.chats[m.chat].antilink) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
+if (!db.data.chats[m.chat].antilink) return m.reply(`Previously Inactive`)
 db.data.chats[m.chat].antilink = false
-m.reply(`Antilink Tidak Aktif !`)
+m.reply(`Antilink Inactive !`)
 } else {
 let buttons = [
 { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
@@ -1212,11 +1212,11 @@ if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 if (args[0] === "on") {
-if (db.data.chats[m.chat].antilinkyt) return m.reply(`Sudah Aktif Sebelumnya`)
+if (db.data.chats[m.chat].antilinkyt) return m.reply(`Previously Active`)
 db.data.chats[m.chat].antilinkyt = true
-m.reply(`Antilink Aktif Youtube !`)
+m.reply(`Antilink Active Youtube !`)
 } else if (args[0] === "off") {
-if (!db.data.chats[m.chat].antilinkyt) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
+if (!db.data.chats[m.chat].antilinkyt) return m.reply(`Previously Inactive`)
 db.data.chats[m.chat].antilinkyt = false
 m.reply(`Antilink Tidak Aktif !`)
 } else {
@@ -1233,11 +1233,11 @@ if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 if (args[0] === "on") {
-if (db.data.chats[m.chat].antilinktt) return m.reply(`Sudah Aktif Sebelumnya`)
+if (db.data.chats[m.chat].antilinktt) return m.reply(`Previously Active`)
 db.data.chats[m.chat].antilinktt = true
 m.reply(`Antilink Aktif Tiktok !`)
 } else if (args[0] === "off") {
-if (!db.data.chats[m.chat].antilinktt) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
+if (!db.data.chats[m.chat].antilinktt) return m.reply(`Sudah Previously Inactive`)
 db.data.chats[m.chat].antilinktt = false
 m.reply(`Antilink Tidak Aktif !`)
 } else {
@@ -1252,7 +1252,7 @@ break
 case 'anticall': {
 if (!isCreator) return replay(mess.owner)
 if (args[0] === "on") {
-if (db.data.settings[botNumber].anticall) return m.reply(`Sudah Aktif Sebelumnya`)
+if (db.data.settings[botNumber].anticall) return m.reply(`Previously Active`)
 db.data.settings[botNumber].anticall = true
 m.reply(`Anticall Berhasil Di Aktifkan !`)
 } else if (args[0] === "off") {
@@ -1273,11 +1273,11 @@ if (!m.isGroup) throw mess.group
 if (!isBotAdmins) throw mess.botAdmin
 if (!isAdmins) throw mess.admin
 if (args[0] === "on") {
-if (db.data.chats[m.chat].antilinkig) return m.reply(`Sudah Aktif Sebelumnya`)
+if (db.data.chats[m.chat].antilinkig) return m.reply(`Previously Active`)
 db.data.chats[m.chat].antilinkig = true
 m.reply(`Antilink Aktif Instagram !`)
 } else if (args[0] === "off") {
-if (!db.data.chats[m.chat].antilinkig) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
+if (!db.data.chats[m.chat].antilinkig) return m.reply(`Sudah Previously Inactive`)
 db.data.chats[m.chat].antilinkig = false
 m.reply(`Antilink Instagram Tidak Aktif !`)
 } else {
@@ -1305,13 +1305,13 @@ break
                 if (!isBotAdmins) throw mess.botAdmin
                 if (!isAdmins) throw mess.admin
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].mute) return m.reply(`Sudah Aktif Sebelumnya`)
+                if (db.data.chats[m.chat].mute) return m.reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
-                m.reply(`${didin.user.name} telah di mute di group ini !`)
+                m.reply(`${didin.user.name} It's been muted in this group!`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].mute) return m.reply(`Sudah Tidak Aktif Sebelumnya`)
+                if (!db.data.chats[m.chat].mute) return m.reply(`Sudah Previously Inactive`)
                 db.data.chats[m.chat].mute = false
-                m.reply(`${didin.user.name} telah di unmute di group ini !`)
+                m.reply(`${didin.user.name} Unmuted in this group!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
@@ -1459,7 +1459,7 @@ if (!isCreator) return replay(mess.owner)
                  let teks = `⬣ *LIST GROUP CHAT*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await didin.groupMetadata(i)
-                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('Asia/Jakarta').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `⬡ *Nama :* ${metadata.subject}\n⬡ *Owner :* ${metadata.owner !== undefined ? '@' + metadata.owner.split`@`[0] : 'Tidak diketahui'}\n⬡ *ID :* ${metadata.id}\n⬡ *Dibuat :* ${moment(metadata.creation * 1000).tz('America/Port-au-Prince').format('DD/MM/YYYY HH:mm:ss')}\n⬡ *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
                  }
                  didin.sendTextWithMentions(m.chat, teks, m)
              }
@@ -1557,7 +1557,7 @@ await didin.sendMedia(m.chat, `https://didinbotz-apii.herokuapp.com/api/maker/tt
 }
 break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
-	        let respond = `Kirim/reply image/sticker dengan caption ${prefix + command} text1|text2`
+	        let respond = `Send/reply image/sticker with caption ${prefix + command} text1|text2`
 	        if (!/image/.test(mime)) throw respond
             if (!text) throw respond
 	        m.reply(mess.wait)
@@ -2337,7 +2337,7 @@ if (!q.includes('tiktok')) return m.reply(`Link Invalid!!`)
 reply(mess.wait)
 require('./lib/tiktok').Tiktok(q).then( data => {
     var button = [{ buttonId: `tiktokaudio`, buttonText: { displayText: `AUDIO‡` }, type: 1 }, { buttonId: `owner`, buttonText: { displayText: `OWNER‡` }, type: 1 }]
-didin.sendMessage(m.chat, { caption: 'Tu Video Nya | Jangan Lupa subscribe yt Andy XD', video: { url: data.watermark }, buttons: button, footer: `© 𝕯𝖆𝖋𝖋𝖆𝖆𝖆 𝖃𝕯‡`, mentions: [sender] })
+didin.sendMessage(m.chat, { caption: 'Tu Video Nya | Jangan Lupa subscribe yt Andy XD', video: { url: data.watermark }, buttons: button, footer: `© ANDYMRLIT‡`, mentions: [sender] })
 })
 }
 break
@@ -3637,8 +3637,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 	    break
 // INI FITUR STORE GAME YA JING //
 case 'proses': {
-min = `• ᴋɪʀɪᴍ ɪᴅ ᴀᴋᴜɴ ᴋᴀʟɪᴀɴ ᴅᴇɴɢᴀɴ ᴄᴀʀᴀ ᴋʟɪᴋ ʙᴜᴛᴛᴏɴ sᴇɴᴅ ɪᴅ\n\n•ᴜɴᴛᴜᴋ ᴘᴇᴍʙᴀʏᴀʀᴀɴ sɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ʙᴜᴛᴛᴏɴ ʙᴀʏᴀʀ\n\nTerima Kasih.`
-let buttons = [{ buttonId: `owner`, buttonText: {displayText: 'sᴇɴᴅ ɪᴅ‡'}, type: 1},{buttonId: `bayar`, buttonText: {displayText: 'ʙᴀʏᴀʀ‡'}, type: 1}]
+min = `• SEND YOUR ACCOUNT ID BY CLIKING THE SEND ID BUTTON\n\n•FOR PAYEMENT PLEASE CLICK THE PAY BOUTTON\n\nThank you`
+let buttons = [{ buttonId: `owner`, buttonText: {displayText: 'sᴇɴᴅ ɪᴅ‡'}, type: 1},{buttonId: `bayar`, buttonText: {displayText: 'PAY ANDY‡'}, type: 1}]
             await didin.sendButtonText(m.chat, buttons, min, nyoutube, m)
             }
             break
@@ -3648,7 +3648,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "5 Diamonds", 
+	    title: "110 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3657,7 +3657,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "12 Diamonds", 
+	    title: "200 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3666,7 +3666,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "50 Diamonds", 
+	    title: "320 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3675,7 +3675,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "70 Diamonds", 
+	    title: "1080 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3684,7 +3684,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "140 Diamonds", 
+	    title: "1200 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3693,7 +3693,7 @@ case 'ff':{
 	title: "Free Fire",
 	rows: [
 	   {
-	    title: "355 Diamonds", 
+	    title: "5200 Diamonds", 
 	    rowId: `${prefix}proses`,
 	   },	    
      ]
@@ -3701,10 +3701,10 @@ case 'ff':{
     ]
 
   const listMessage = {
-   text: `*_Hai kak ${pushname}_*\n*_Ini List Harga Diamond Free Fire_*`,
+   text: `*_Yoo bro ${pushname}_*\n*_Ini List Diamond Pou Free Fire_*`,
    footer: "Andy XD‡",
    title: "",
-   buttonText: "Cek Harga !!",
+   buttonText: "Price Check !!",
    sections
    }
 
@@ -4021,7 +4021,7 @@ case 'store':{
 	   {
 	    title: "Free Fire", 
 	    rowId: `${prefix}ff`,
-	    description: "List Harga Diamond Free Fire",
+	    description: "List Diamond Free Fire",
 	   },	    
      ]
     },
@@ -4071,7 +4071,7 @@ case 'store':{
    text: `*_Welcome To Andy XD Store_*`,
    footer: "Andy XD‡",
    title: "",
-   buttonText: "Silahkan Dipilih !!",
+   buttonText: "Please Select !!",
    sections
    }
 
@@ -4108,25 +4108,29 @@ const reSize = (buffer, ukur1, ukur2) => {
 }
 buffer = global.rules
   	anu = `
-*⚠️ sʏᴀʀᴀᴛ ᴅᴀɴ ᴋᴇᴛᴇɴᴛᴜᴀɴ ⚠️*
+⚠️ *TERMS AND CONDITIONS* ⚠️
 
-*1. ᴘᴇɴɢɢᴜɴᴀ ᴅᴀᴘᴀᴛ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ sᴇᴍᴜᴀ ᴘᴇʀɪɴᴛᴀʜ ᴅᴀɴ ᴛɪᴅᴀᴋ ᴍᴇʟᴀᴋᴜᴋᴀɴ sᴘᴀᴍ ᴛᴇʀʜᴀᴅᴀᴘ ʙᴏᴛ.*
-*2. ᴅɪʟᴀʀᴀɴɢ ᴋᴇʀᴀs ᴍᴇɴɢɪʀɪᴍ ᴠɪʀᴛᴇx ᴅᴀɴ sᴇᴍᴀᴄᴀᴍɴʏᴀ ʏᴀɴɢ ᴍᴇᴍʙᴜᴀᴛ sᴇʀᴠᴇʀ ᴅᴏᴡɴ ᴀᴛᴀᴜᴘᴜɴ ʙᴏᴛ ᴄʀᴀsʜ.*
-*3. ᴘᴇɴɢɢᴜɴᴀ ʏᴀɴɢ ᴍᴇɴɢɪʀɪᴍ ʜᴀʟ ᴀᴛᴀᴜ ᴅᴀᴛᴀ ᴘʀɪʙᴀᴅɪ ᴛɪᴅᴀᴋ ᴀᴋᴀɴ ᴅɪsɪᴍᴘᴀɴ ᴏʟᴇʜ ʙᴏᴛ ɪɴɪ, ᴅᴀɴ ᴛɪᴅᴀᴋ ᴀᴋᴀɴ ʙᴇʀᴛᴀɴɢɢᴜɴɢ ᴊᴀᴡᴀʙ ᴀᴛᴀs ᴅᴀᴛᴀ ᴘʀɪʙᴀᴅɪ ᴛᴇʀsᴇʙᴜᴛ!*
-*4. ᴋᴀᴍɪ ᴛɪᴅᴀᴋ ᴘᴇʀɴᴀʜ ᴍᴇᴍɪɴᴛᴀ ᴀɴᴅᴀ ᴜɴᴛᴜᴋ ᴍᴇᴍʙᴇʀɪᴋᴀɴ ɪɴғᴏʀᴍᴀsɪ ᴘʀɪʙᴀᴅɪ.*
+* STRICTLY PROHIBITED TO SEND VIRTEX AND THE LIKE WHICH MAKING THE SERVER DOWN OR BOT CRASH.*
 
-*❗ ʀᴜʟᴇs ❗*
-1. ᴊᴀɴɢᴀɴ sᴘᴀᴍ ʙᴏᴛ.
-sᴀɴᴋsɪ : ᴡᴀʀɴ/sᴏғᴛ ʙʟᴏᴄᴋ
+ USERS THAT SEND PERSONAL THINGS OR DATA WILL NOT BE STORED BY THIS BOTS, AND WILL NOT BE RESPONSIBLE FOR SUCH PERSONAL DATA!*
+ 
+  WE NEVER ASKED YOU
+TO PROVIDE PERSONAL INFORMATION.*
 
-2. ᴊᴀɴɢᴀɴ ᴛᴇʟᴇᴘᴏɴ ʙᴏᴛ.
-sᴀɴᴋsɪ : sᴏғᴛ ʙʟᴏᴄᴋ
+RULES! *
 
-3. ᴊᴀɴɢᴀɴ ᴍᴇɴɢᴇᴋsᴘʟᴏɪᴛᴀsɪ ʙᴏᴛ.
-sᴀɴᴋsɪ : ᴘᴇʀᴍᴀɴᴇɴᴛ ʙʟᴏᴄᴋ
+Do not spam bro.
+ SANCTION WARN/SOFT BLOCK
+
+2. DO NOT PHONE BOTS.
+ SANCTION: SOFT BLOCK
+
+3 DO NOT EXPLOIT THE BOAT.
+PERMANENT BLOCK SANCTIONS
 ___________________
-ɴᴏᴛᴇ : ʙᴏᴛ ɪɴɪ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴀᴜᴛᴏʀᴇᴀᴅ ᴀᴛᴀᴜ ʟᴀɴɢsᴜɴɢ ᴍᴇᴍʙᴀᴄᴀ ᴘᴇsᴀɴ ʏᴀɴɢ ᴘᴇɴɢɢᴜɴᴀ ᴋɪʀɪᴍ.`
-    var button = [{ buttonId: `sewabot`, buttonText: { displayText: `SEWABOT‡` }, type: 1 }, { buttonId: `DONASI`, buttonText: { displayText: `DONASI‡` }, type: 1 }]
+
+NOTE: THIS BOT USES AUTOREAD OR DIRECTLY READS MESSAGES THAT USERS SEND.`
+    var button = [{ buttonId: `sewabot`, buttonText: { displayText: `BUYBOT‡` }, type: 1 }, { buttonId: `DONASI`, buttonText: { displayText: `DONASI‡` }, type: 1 }]
 didin.sendMessage(m.chat, { caption: `${anu}`, location: { jpegThumbnail: await reSize(buffer, 200, 200) }, buttons: button, footer:  mess.watermark, mentions: [m.sender] })
 }
 break
@@ -4138,53 +4142,53 @@ let sections = [
                 title: "sᴛᴀᴛᴜs",
 
                 rows: [
-{title: "【️💌】ᴏᴡɴᴇʀ ‹", rowId: `owner`, description: `ʀᴏᴏᴍ ᴅᴇᴠᴇʟᴏᴘᴇʀ><`},
-{title: "【️☄️】ʀᴇǫᴜᴇsᴛ ‹", rowId: `request`, description: `ʀᴇǫᴜᴇsᴛ ғɪᴛᴜʀ ᴍᴇɴᴀʀɪᴋ ᴋᴇ ʙᴏᴛ`},
-{title: "【️📩】ʀᴇᴘᴏʀᴛ ‹", rowId: `report`, description: `ᴊɪᴋᴀ ᴀɴᴅᴀ ᴍᴇɴᴇᴍᴜᴋᴀɴ ʙᴜɢ/ᴇʀᴏʀ ʟᴀᴘᴏʀ ᴋᴇ ᴏᴡɴᴇʀ`},
-{title: "【️💻】ʙᴏᴛ sᴛᴀᴛᴜs ‹", rowId: `botinfo`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ sᴛᴀᴛᴜs ᴅᴀꜰꜰᴀᴀᴀ xᴅ`},
+{title: "【️💌】Creator ‹", rowId: `owner`, description: `ʀᴏᴏᴍ ᴅᴇᴠᴇʟᴏᴘᴇʀ><`},
+{title: "【️☄️】ʀᴇǫᴜᴇsᴛ ‹", rowId: `request`, description: `BOT BY ANDYMRLIT`},
+{title: "【️📩】ʀᴇᴘᴏʀᴛ ‹", rowId: `report`, description: `BOT BY ANDYMRLIT`},
+{title: "【️💻】ʙᴏᴛ sᴛᴀᴛᴜs ‹", rowId: `botinfo`, description: `BOT BY ANDYMRLIT`},
 ]
 },
   {
-title: "ʙᴇʀɪᴋᴜᴛ ғɪᴛᴜʀ ᴅᴀꜰꜰᴀᴀᴀ xᴅ",
+title: "BOT BY ANDYMRLIT",
 rows: [
-{title: "【⚙️】› ᴍ ᴀ ɪ ɴ | ᴍ ᴇ ɴ ᴜ ‹", rowId: `mainmenu`, description: `ғɪᴛᴜʀ ᴍᴀɪɴᴍᴇɴᴜ`},
-{title: "【🏢】› ɢ ʀ ᴏ ᴜ ᴘ ‹", rowId: `grupmenu`, description: `ᴀᴛᴜʀ ɢʀᴜᴘᴍᴜ ᴅᴇɴɢᴀɴ ᴍᴇɴᴊᴀᴅɪᴋᴀɴ ʙᴏᴛ sᴇʙᴀɢᴀɪ ᴀᴅᴍɪɴ`},
-{title: "【📲】›  ᴅ ᴏ ᴡ ɴ ʟ ᴏ ᴀ ᴅ ‹", rowId: `downloadmenu`, description: `ᴅᴏᴡɴʟᴏᴀᴅ sᴇsᴜᴀᴛᴜ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`},
-{title: "【🛠️】› ᴏ ᴡ ɴ ᴇ ʀ ‹", rowId: `ownermenu`, description: `ᴍᴇɴᴜ ᴍᴇɴɢᴀᴛᴜʀ ʙᴏᴛ ( ᴋʜᴜsᴜs ᴏᴡɴᴇʀ )`},
-{title: "【🔎】› s ᴇ ᴀ ʀ ᴄ ʜ ‹", rowId: `searchmenu`, description: `ᴍᴇɴᴄᴀʀɪ ᴅᴀᴛᴀ ᴅᴀᴛᴀ ᴅᴀʀɪ ᴡᴇʙ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`},
-{title: "【🕋】› ɪ s ʟ ᴀ ᴍ ɪ ‹", rowId: `islamimenu`, description: `ᴍᴇɴᴜ ᴋʜᴜsᴜs ᴍᴜsʟɪᴍ`},
-{title: "【💬】› ᴀ ɴ ᴏ ɴ ʏ ᴍ ᴏ ᴜ s ‹", rowId: `anonmenu`, description: `ᴀɴᴏɴʏᴍᴏᴜs ᴄʜᴀᴛ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`},
-{title: "【📁】› ᴅ ᴀ ᴛ ᴀ ʙ ᴀ s ᴇ ‹ ", rowId: `dbmenu`, description: `ᴍᴇɴɢᴀᴛᴜʀ ғɪʟᴇ ᴅɪ ᴅᴀᴛᴀʙᴀsᴇ`},
-{title: "【🎧】› s ᴏ ᴜ ɴ ᴅ ‹", rowId: `soundmenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ sᴏᴜɴᴅ ᴍᴇɴᴜ`},
-{title: "【🔖】 ʀ ᴀ ɴ ᴅ ᴏ ᴍ ‹", rowId: `randommenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ᴀᴄᴀᴋ`},
-{title: "【🎙️】› ᴠ ᴏ ɪ ᴄ ᴇ  ‹", rowId: `vcmenu`, description: `ᴍᴇɴɢᴜʙᴀʜ sᴜᴀʀᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`},
-{title: "【🕹️】› ᴄ ᴏ ɴ ᴠ ᴇ ʀ ᴛ ‹", rowId: `convertmenu`, description: `ᴍᴇᴍʙᴜᴀᴛ sᴛɪᴋᴇʀ ᴅᴀɴ ᴍᴇɴɢᴄᴏɴᴠᴇʀᴛ ᴍᴇᴅɪᴀ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`},
-{title: "【🧩】› ғ ᴜ ɴ ‹", rowId: `funmenu`, description: `ᴍᴇɴᴜ ᴍᴇɴʏᴇɴᴀɴɢᴋᴀɴ ʏᴀɴɢ ᴛᴇʀᴅᴀᴘᴀᴛ ᴅɪ ʙᴏᴛ`},
-{title: "【🎥】› ᴘ ʜ ᴏ ᴛ ᴏ | ᴏ x ʏ ‹", rowId: `photomenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ᴘʜᴏᴛᴏ ᴏxʏ`},
-{title: "【🗡️】› ᴛ ᴇ x ᴛ | ᴘ ʀ ᴏ ‹", rowId: `textpro`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ᴛᴇxᴛ ᴘʀᴏ`},
-{title: "【🔗️】› s ʜ ᴏ ʀ ᴛ ‹", rowId: `shortmenu`, description: `ᴜɴᴛᴜᴋ ᴍᴇᴍᴘᴇʀᴘᴇɴᴅᴇᴋ ᴜʀʟ`},
-{title: "【📝️】› ᴄ ᴇ ʀ ᴘ ᴇ ɴ ‹", rowId: `cerpenmenu`, description: `ᴄᴇʀɪᴛᴀ ᴘᴇɴᴅᴇᴋ`},
-{title: "【👀】› ᴀ s ᴜ ᴘ ᴀ ɴ ‹", rowId: `asupanmenu`, description: `ᴅᴏsᴀ ᴛᴀɴɢɢᴜɴɢ sᴇɴᴅɪʀɪ ʜᴇʜᴇ`},
-{title: "【🌌】› ɪ ᴍ ᴀ ɢ ᴇ ‹", rowId: `randomimage`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ ʀᴀɴᴅᴏᴍ ɪᴍᴀɢᴇ`},
-{title: "【🌀】› ᴀ ɴ ɪ ᴍ ᴇ ‹", rowId: `animemenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ғɪᴛᴜʀ ʀᴀɴᴅᴏᴍ ᴀɴɪᴍᴇ`},
-{title: "【🎗️】› ɢ ᴀ ᴍ ᴇ  ‹", rowId: `gamemenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ɢᴀᴍᴇ`},
-{title: "【📌️】› ᴄ ᴇ ᴋ | ᴍ ᴇ ɴ ᴜ ‹", rowId: `cekmenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ᴄᴇᴋᴍᴇɴᴜ`},
-{title: "【🔮】› ᴘ ʀ ɪ ᴍ ʙ ᴏ ɴ ‹", rowId: `primbonmenu`, description: `ᴍᴇɴᴀᴍᴘɪʟᴋᴀɴ ᴅᴀғᴛᴀʀ ғɪᴛᴜʀ ᴘʀɪᴍʙᴏɴ`}
+{title: "【⚙️】› ᴍ ᴀ ɪ ɴ | ᴍ ᴇ ɴ ᴜ ‹", rowId: `mainmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🏢】› ɢ ʀ ᴏ ᴜ ᴘ ‹", rowId: `grupmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【📲】›  ᴅ ᴏ ᴡ ɴ ʟ ᴏ ᴀ ᴅ ‹", rowId: `downloadmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🛠️】› ᴏ ᴡ ɴ ᴇ ʀ ‹", rowId: `ownermenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🔎】› s ᴇ ᴀ ʀ ᴄ ʜ ‹", rowId: `searchmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🕋】› ɪ s ʟ ᴀ ᴍ ɪ ‹", rowId: `islamimenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【💬】› ᴀ ɴ ᴏ ɴ ʏ ᴍ ᴏ ᴜ s ‹", rowId: `anonmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【📁】› ᴅ ᴀ ᴛ ᴀ ʙ ᴀ s ᴇ ‹ ", rowId: `dbmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🎧】› s ᴏ ᴜ ɴ ᴅ ‹", rowId: `soundmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🔖】 ʀ ᴀ ɴ ᴅ ᴏ ᴍ ‹", rowId: `randommenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🎙️】› ᴠ ᴏ ɪ ᴄ ᴇ  ‹", rowId: `vcmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🕹️】› ᴄ ᴏ ɴ ᴠ ᴇ ʀ ᴛ ‹", rowId: `convertmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🧩】› ғ ᴜ ɴ ‹", rowId: `funmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🎥】› ᴘ ʜ ᴏ ᴛ ᴏ | ᴏ x ʏ ‹", rowId: `photomenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🗡️】› ᴛ ᴇ x ᴛ | ᴘ ʀ ᴏ ‹", rowId: `textpro`, description: `BOT BY ANDYMRLIT`},
+{title: "【🔗️】› s ʜ ᴏ ʀ ᴛ ‹", rowId: `shortmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【📝️】› ᴄ ᴇ ʀ ᴘ ᴇ ɴ ‹", rowId: `cerpenmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【👀】› ᴀ s ᴜ ᴘ ᴀ ɴ ‹", rowId: `asupanmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🌌】› ɪ ᴍ ᴀ ɢ ᴇ ‹", rowId: `randomimage`, description: `BOT BY ANDYMRLIT`},
+{title: "【🌀】› ᴀ ɴ ɪ ᴍ ᴇ ‹", rowId: `animemenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🎗️】› ɢ ᴀ ᴍ ᴇ  ‹", rowId: `gamemenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【📌️】› ᴄ ᴇ ᴋ | ᴍ ᴇ ɴ ᴜ ‹", rowId: `cekmenu`, description: `BOT BY ANDYMRLIT`},
+{title: "【🔮】› ᴘ ʀ ɪ ᴍ ʙ ᴏ ɴ ‹", rowId: `primbonmenu`, description: `BOT BY ANDYMRLIT`}
 ]
 },
   {
 title: "ɪɴғᴏ",
 rows: [
-{title: "【🔭】sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", rowId: `sc`, description: `sᴄʀɪᴘᴛ ᴅᴀꜰꜰᴀᴀᴀ xᴅ - ʙʏ ᴅᴀꜰꜰᴀᴀᴀ xᴅ`},
-{title: "【💰】ᴅᴏɴᴀsɪ", rowId: `donasi`, description: `ᴅᴏɴᴀsɪ ʙᴀɴɢ ʙɪᴀʀ ʙᴏᴛ ᴏɴ 24 ᴊᴀᴍ`},
-{title: "【❗】ʀᴜʟᴇs", rowId: `rules`, description: `ᴘᴇʀᴀᴛᴜʀᴀɴ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴅᴀꜰꜰᴀᴀᴀ xᴅ`},
-{title: "【🥇】ᴄᴏɴᴛʀɪʙᴜᴛᴏʀ", rowId: `tqto`, description: `ʏᴀɴɢ ᴍᴇᴍʙᴀɴᴛᴜ ᴍᴇɴɢᴇᴍʙᴀɴɢᴋᴀɴ ᴅᴀꜰꜰᴀᴀᴀ xᴅ`},
-{title: "【🌸】ɢʀᴏᴜᴘ ʙᴏᴛ", rowId: `groupbot`, description: `ᴊᴀɴɢᴀɴ ʟᴜᴘᴀ ᴊᴏɪɴ ᴋᴀᴡᴀɴ`},
+{title: "【🔭】sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", rowId: `sc`, description: `BOT BY ANDYMRLIT`},
+{title: "【💰】ᴅᴏɴᴀsɪ", rowId: `donasi`, description: `BOT BY ANDYMRLIT`},
+{title: "【❗】ʀᴜʟᴇs", rowId: `rules`, description: `BOT BY ANDYMRLIT`},
+{title: "【🥇】ᴄᴏɴᴛʀɪʙᴜᴛᴏʀ", rowId: `tqto`, description: `BOT BY ANDYMRLIT`},
+{title: "【🌸】ɢʀᴏᴜᴘ ʙᴏᴛ", rowId: `groupbot`, description: `BOT BY ANDYMRLIT`},
      ]
     }     
     ]
 
-didin.sendListMsg(m.chat, `*_Hai kak ${pushname} ${ucapanWaktu}_*\n\n_Aku 𝕯𝖆𝖋𝖋𝖆𝖆𝖆 𝖃𝕯‡ Bot whatsapp multi-device yang dapat membantumu_*`, '', '', `Click Here!`, sections, m)
+didin.sendListMsg(m.chat, `*_Bro 🌚 ${pushname} ${ucapanWaktu}_*\n\n_I am ANDY XD‡ Bot whatsapp multi-device Developped BY ANDYMRLIT*`, '', '', `Touch me ^_^ `, sections, m)
 }
 break
 case 'gamemenu':{
@@ -4266,7 +4270,7 @@ case 'gamemenu':{
     ]
 
   const listMessage = {
-   text: `*_Hai kak ${pushname} ${ucapanWaktu}_*\n\n_Berikut Game" Yang Tersedia Di Andy XD‡_`,
+   text: `*_Yoo bro ${pushname} ${ucapanWaktu}_*\n\n_The following games are available on Andy XD‡_`,
    footer: "Andy XD‡",
    title: "",
    buttonText: "Buka!",
@@ -4297,21 +4301,21 @@ let sections = [
 
                 didin.sendListMsg(m.chat, `*❏ Andy XD‡*
 
-Bot ini dibuat menggunakan *NodeJS* dengan bantuan *Baileys* sebagai Whatsapp Web API dan dimodifikasi dari *Hisoka Morou ( DikaArdnt )
+This bot was made using *NodeJS* with the help of *Baileys* as Whatsapp Web API and modified from *Hisoka Morou ( DikaArdnt )
 
-KARENA TIDAK ADA SCRIPTNYA JADI SUBSCRIBE YOUTUBE SAYA SAJA AGAR MENDAPATKAN SCRIPT² TERBARU: V
-© Andy XD‡`, ' ', ' ', `Buka!`, sections, m)
+BECAUSE THERE IS NO SCRIPT SO JUST FOLLOW MY INSTAGRAM
+© Andy XD‡`, ' ', ' ', `Open Open!`, sections, m)
        }
 break
 case 'donasi': case 'donate': case 'donasi': case 'donasi': {
                 didin.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/d460e086f9f9bf6b04e17.jpg' }, caption: `*Hi Bro ${m.pushName}*\n*_Jika ingin Donasi Silahkan Scan Gambar Diatas_*
 
 *_Atau Via_*
-- Dana : 085876596372
-- OVO : 085876596372
+- Dana : 50947477839
+- OVO : 50941411147
 - Saweria : https://saweria.co/dutagamer
 
-*_Terima Kasih Bagi Yang Sudah Donasi_*\n` }, { quoted: m })
+*_Thank you for those who have donated_*\n` }, { quoted: m })
             }
             break
 case 'sewabot':{
@@ -4333,12 +4337,12 @@ let sections = [
 
                 ]
 
-                didin.sendListMsg(m.chat, `*────── 「 SEWA BOT 」 ──────*
+                didin.sendListMsg(m.chat, `*────── 「 BUY BOT 」 ──────*
                 
-𝐥𝐢𝐬𝐭 𝐬𝐞𝐰𝐚 𝐤𝐚𝐦𝐢 𝐬𝐢𝐥𝐚𝐡𝐤𝐚𝐧 𝐝𝐢𝐩𝐢𝐥𝐢𝐡
-• 1 Minggu 5k
-• 2 Minggu 10k
-┗━━━•❅•°•❈`, ' ', ' ', `Lihat!`, sections, m)
+our rental list please select
+• 1 Week 50 gdes
+• 2 Weeks 100 gdes
+┗━━━•❅•°•❈`, ' ', ' ', `Look!`, sections, m)
        }
 break
             case 'grupmenu': {
@@ -4367,7 +4371,7 @@ goup = `「 *Group Menu* 」
 let buttons = [{ buttonId: `tesrow`, buttonText: {displayText: 'BACK‡'}, type: 1},{buttonId: `donasi`, buttonText: {displayText: 'DONASI‡'}, type: 1}]
 let buttonMessage = {
   document: fs.readFileSync('./AndyMedia/doc/fake.pdf'),
-  fileName : `Hi ${pushname} |${ucapanWaktu}`,
+  fileName : `Bro ${pushname} |${ucapanWaktu}`,
   caption: goup,
   footer: 'Andy XD‡',
   buttons: buttons,
@@ -4470,7 +4474,7 @@ break
 case 'cerpenmenu': {
 pen = `「 *RANDOM CERPEN* 」
 あ ${prefix}cerpen
-あ ${prefix}cerpen-sejarah
+あ ${prefix}cerpen-sejarah 
 あ ${prefix}cerpen-sedih
 あ ${prefix}cerpen-sastra
 あ ${prefix}cerpen-romantis
