@@ -60,10 +60,10 @@ global.limitAwal = {
  prem: 'Unlimited',
  free: 70
 }
-global.thumb = fs.readFileSync('./DidinMedia/didin.png')
-global.didinbc = fs.readFileSync('./DidinMedia/didinbc.png')
-global.rules = fs.readFileSync('./DidinMedia/rules.jpg')
-global.xc = fs.readFileSync('DidinMedia/didinxc.jpg')
+global.thumb = fs.readFileSync('./AndyMedia/didin.png')
+global.didinbc = fs.readFileSync('./AndyMedia/didinbc.png')
+global.rules = fs.readFileSync('./AndyMedia/rules.jpg')
+global.xc = fs.readFileSync('AndyMedia/didinxc.jpg')
 global.mygit = 'https://github.com/Daffa-b9tzz'
 global.myyt = 'https://www.youtube.com/@ rismamylove'
 global.myytv = 'https://www.youtube.com/@ rismamylove'
